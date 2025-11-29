@@ -37,7 +37,7 @@ source install/setup.bash
 ### Launch with GUI
 
 ```bash
-# Launch with default params.yaml (from okmr_automated_planner if available)
+# Launch with default params.yaml (if configured)
 ros2 launch tune_gui tune_gui_launch.py
 
 # Launch with specific params.yaml file
@@ -60,7 +60,7 @@ ros2 run tune_gui tune_gui /path/to/params.yaml
 
 1. Launch your ROS2 nodes (e.g., `automated_planner`)
 2. Launch tune_gui
-3. Select node from dropdown (e.g., `automated_planner`)
+3. Select node from dropdown
 4. Edit parameter values in the left tree
 5. Changes apply immediately to the running node
 
@@ -71,14 +71,6 @@ ros2 run tune_gui tune_gui /path/to/params.yaml
 3. Edit values in the right tree
 4. Click "Save params.yaml" to write changes to disk
 5. (Optional) Click "Apply YAML to Nodes" to push changes to running nodes
-
-### Syncing YAML to Nodes
-
-If you've manually edited `params.yaml` and want to apply it:
-
-1. Load the YAML file
-2. Click "Apply YAML to Nodes"
-3. All matching parameters will be updated on running nodes
 
 ## Parameter Path Format
 
@@ -100,11 +92,6 @@ The GUI automatically handles the `ros__parameters` prefix when communicating wi
 - **Ctrl+O**: Load params.yaml
 - **Ctrl+S**: Save params.yaml
 - **F5**: Refresh node list
-
-## Development
-
-To add new parameter types: 
-- Extend `ParameterItemDelegate` in `parameter_tree_widget.py`
 
 ## License
 
