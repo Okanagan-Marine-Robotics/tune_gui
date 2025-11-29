@@ -25,7 +25,7 @@ def generate_launch_description():
     
     # Note: params_file is a command line argument, not a ROS parameter
     tune_gui_node = Node(
-        package='tuneGUI',
+        package='tune_gui',
         executable='tune_gui',
         name='tune_gui_node',
         output='screen',
